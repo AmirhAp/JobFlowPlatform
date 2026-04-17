@@ -1,47 +1,34 @@
-Job Post : 
-    User Flow: what user can do : 
-        - see all job postings 
-        - see one job post
-        - see all jobs from one company 
-        - see all job posts based on its Status
+Person:
+    what user do : 
+        - i find someone 
+        - i message him
+        - he responde
+        - i should do an action about his response 
+        - i should response back
+        - if do not response i can follow up 
+        - i should know the priority of that guy 
+        - the guy is in a company and i want to ask for one specific role
 
-        - create one new job post for a company
-        
-        - change status of one job post
-        - edit info of one job post
-        
-        - remove one job post
-        
-        
+    what change about a person:
+        - saved
+        - massaged
+        - respond
+        - action needed
+        - respons needed
+        - done
+    
     endpoints: 
-        - GET   /posts
-        - GET   /posts/{post_id}
-        - GET   /companies/{company_id}/posts
-        - GET   /posts?status=applied
-
-        - POST  /posts
-
-        - PATCH /posts/{post_id}/status
-        - PUT   /posts/{post_id}
-
-        - DELETE /posts/{post_id}
-        
-    Enum : 
-        - Status:
-            - To Review
-            - Applied 
-            - Rejected
-            - interview
-            - offered
-            - closed
-
-    schema: 
-        - PostBase: 
-            - title 
-            - company id
+        - see all people 
+            based on :
             - status
+            - massage date
+            - priority
         
-        - PostRead:
+        - add a person
 
-        
+        - edit some one info
+        - update status 
+
+        -remove someone
+    
     
