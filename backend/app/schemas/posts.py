@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from datetime import datetime
 from typing import Optional
 from app.core.enum import PostStatus
@@ -8,6 +8,10 @@ class PostBase(BaseModel):
     title: str = Field(..., min_length=1, max_length=200)
     company_id: int
     status: PostStatus
+
+    @field_validator("title")
+    def lower_title(cls, title):
+        return title.strip().lower()
 
 
 class PostRead(PostBase):
@@ -27,6 +31,12 @@ class PostUpdate(BaseModel):
     title: Optional[str] = None
     company_id: Optional[int] = None
     status: Optional[PostStatus] = None
+
+    @field_validator("title")
+    def normalize_title(cls, title):
+        if title is not None:
+            return title.stip().lower()
+        return title
 
 
 class PostStatusUpdate(BaseModel):

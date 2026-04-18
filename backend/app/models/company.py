@@ -1,14 +1,14 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import String, DateTime
 from datetime import datetime
 from app.db.session import Base
 
 
 class Company(Base):
-    __tablename__ = "company"
+    __tablename__ = "companies"
 
-    id = Column(Integer, primary_key=True, index=True)
-    company = Column(String, nullable=False)
-    title = Column(String, nullable=False)
-    status = Column(String, default="applied")
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow)
+    id: Mapped[int] = mapped_column(primary_key=True, index=True)
+    
+    name: Mapped[str] = mapped_column(String, nullable=False, unique=True)
+
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
