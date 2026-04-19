@@ -22,7 +22,7 @@ def create_company(new_company: CompanyCreate, db: Session = Depends(get_db)):
 
 @router.put("/{company_id}", response_model=CompanyRead)
 def update_compnay(company_id: int, updated_company: CompanyUpdate, db: Session = Depends(get_db)):
-    return company_service.edit(db, company_id, updated_company)
+    return company_service.update(db, company_id, updated_company)
 
 
 @router.delete("/{company_id}", response_model=CompanyRead)
