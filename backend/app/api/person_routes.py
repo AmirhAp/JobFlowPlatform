@@ -1,14 +1,14 @@
 from fastapi import APIRouter, Query, HTTPException
 from typing import List, Optional
 from app.schemas.persons import PersonRead, PersonCreate, PersonInfoUpdate, PersonStatusUpdate
-from app.core.enum import PersonStatus
+from app.core.enum import PersonStatusEnum
 from datetime import datetime
 
 router = APIRouter(prefix="/persons", tags=["persons"])
 
 
 db = []
-current_id = 1
+current_index = 1
 
 def find_person(person_id: int) -> dict | None:
     for person in db:
@@ -18,7 +18,7 @@ def find_person(person_id: int) -> dict | None:
 
 
 @router.get("/", response_model=List[PersonRead])
-def get_all_persons(status: Optional[PersonStatus] = Query(default=None)):
+def get_all_persons(status: Optional[PersonStatusEnum] = Query(default=None)):
     persons = list(db)
 
     if status is not None:

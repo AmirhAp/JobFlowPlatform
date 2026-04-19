@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query
 from typing import List, Optional
 from datetime import datetime
-from app.core.enum import PostStatus
+from app.core.enum import PostStatusEnum
 
 from app.schemas.posts import PostRead, PostCreate, PostUpdate, PostStatusUpdate
 
@@ -20,7 +20,7 @@ def find_post(post_id: int) -> dict | None:
 
 
 @router.get("/", response_model=List[PostRead])
-def get_all_posts(status: Optional[PostStatus] = Query(default=None),
+def get_all_posts(status: Optional[PostStatusEnum] = Query(default=None),
                   company_id: Optional[int] = Query(default=None)):
     posts = list(db)
 

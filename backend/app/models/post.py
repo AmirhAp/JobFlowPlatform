@@ -2,7 +2,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import String, DateTime, ForeignKey, Enum
 from datetime import datetime
 from app.db.session import Base
-from app.core.enum import PostStatus
+from app.core.enum import PostStatusEnum
 
 
 class Post(Base):
@@ -12,10 +12,10 @@ class Post(Base):
 
     title: Mapped[str] = mapped_column(String, nullable=False)
     company_id: Mapped[int] = mapped_column(ForeignKey("companies.id"), nullable=False)
-    status: Mapped[PostStatus] = mapped_column(
-        Enum(PostStatus), 
+    status: Mapped[PostStatusEnum] = mapped_column(
+        Enum(PostStatusEnum), 
         nullable=False, 
-        default=PostStatus.SAVED
+        default=PostStatusEnum.SAVED
     )
 
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)

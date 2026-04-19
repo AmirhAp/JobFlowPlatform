@@ -1,12 +1,12 @@
 from pydantic import BaseModel, Field, field_validator
 from typing import Optional
-from app.core.enum import PersonStatus
+from app.core.enum import PersonStatusEnum
 from datetime import datetime
 
 class PersonBase(BaseModel):
     name: str = Field(..., min_length=3, max_length=100)
     company_id: int
-    status: PersonStatus
+    status: PersonStatusEnum
 
     @field_validator("name")
     def normalize_name(cls, name):
@@ -27,7 +27,7 @@ class PersonCreate(PersonBase):
 
 
 class PersonStatusUpdate(BaseModel):
-    status: PersonStatus
+    status: PersonStatusEnum
 
 
 class PersonInfoUpdate(BaseModel):
