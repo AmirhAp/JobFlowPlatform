@@ -1,10 +1,10 @@
 from sqlalchemy.orm import Session
-from typing import List
+
 from app.models.company import Company
 from app.schemas.company import CompanyCreate, CompanyUpdate
 
 
-def get_all(db: Session, skip: int = 0, limit: int = 100) -> List[Company]:
+def get_all(db: Session, skip: int = 0, limit: int = 100) -> list[Company]:
     return db.query(Company).offset(skip).limit(limit).all()
 
 
