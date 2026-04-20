@@ -28,9 +28,12 @@ def update_status(db: Session, post: Post, data: PostStatusUpdate) -> Post:
 
 
 def update(db: Session, post: Post, data: PostUpdate) -> Post:
-    update_data = data.model_dump(exclude_unset=True)
+    data_dict = data.model_dump(exclude_unset=True)
 
-    for field, value in update_data.items():
+    if not data_dict:
+        return post
+
+    for field, value in data_dict.items():
         setattr(post, field, value)
 
     db.commit()
