@@ -35,7 +35,7 @@ class PostUpdate(BaseModel):
     @field_validator("title")
     def normalize_title(cls, title):
         if title is not None:
-            return title.stip().lower()
+            return title.strip().lower()
         return title
 
 
@@ -43,4 +43,8 @@ class PostStatusUpdate(BaseModel):
     status: PostStatusEnum
 
 
-    
+class PostFilter(BaseModel):
+    status: Optional[PostStatusEnum] = None
+    company_id: Optional[int] = None
+    skip: Optional[int] = 0
+    limit: Optional[int] = 100
