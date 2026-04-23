@@ -1,15 +1,23 @@
 from sqlalchemy.orm import Session
 
 from app.models.person import Person
-from app.schemas.persons import PersonCreate, PersonInfoUpdate, PersonStatusUpdate
+from app.schemas.persons import PersonCreate, PersonInfoUpdate, PersonStatusUpdate, PersonFilters
 
 
 def get_by_id(db: Session, person_id: int) -> Person | None:
     return db.query(Person).filter(Person.id == person_id).first()
 
 
-def get_all(db: Session, skip: int = 0, limit: int = 100) -> list[Person]:
-    return db.query(Person).offset(skip).limit(limit).all()
+def get_all(db: Session, filters: PersonFilters) -> list[Person]:
+    query = db.query(Person)
+
+    if filters.company_id is not None:
+        query = query.filter(Person.company_id == filters.company_id)
+
+    if filters.status is not None:
+        query = query.filter(Person.status == filters.status)
+    
+    return query.offset(filters.skip).limit(filters.limit).all()
 
 
 def create(db: Session, data: PersonCreate) -> Person:

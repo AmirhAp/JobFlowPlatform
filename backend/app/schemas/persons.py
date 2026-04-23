@@ -39,3 +39,13 @@ class PersonInfoUpdate(BaseModel):
         if name is not None:
             return name.strip().lower()
         return name
+
+
+
+
+class PersonFilters(BaseModel):
+    status: Optional[PersonStatusEnum] = None
+    company_id: Optional[int] = None
+    skip: Optional[int] = 0
+    limit: Optional[int] = 100
+    
