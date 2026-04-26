@@ -1,17 +1,20 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from typing import List
+import logging
 
 from app.schemas.company import CompanyCreate, CompanyRead, CompanyUpdate
 from app.db.dependencies import get_db
 from app.services import company_service
 
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/companies", tags=["companies"])
 
 
 @router.get("/", response_model=List[CompanyRead])
 def all_companies(db: Session = Depends(get_db)):
+    logger.info("all company requested")     
     return company_service.get_all(db)
 
 
