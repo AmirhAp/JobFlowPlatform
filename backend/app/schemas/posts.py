@@ -53,5 +53,5 @@ class PostStatusUpdate(BaseModel):
 class PostFilter(BaseModel):
     status: Optional[PostStatusEnum] = None
     company_id: Optional[int] = Field(default=None, gt=0)
-    skip: Optional[int] = Field(default=0, gt=0)
+    skip: Optional[int] = Field(default=0, ge=0)
     limit: Optional[int] = Field(default=100, gt=0, le=100)

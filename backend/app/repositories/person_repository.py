@@ -31,9 +31,6 @@ def create(db: Session, data: PersonCreate) -> Person:
 def update(db: Session, person: Person, data: PersonInfoUpdate) -> Person:
     data_dict = data.model_dump(exclude_unset=True)
 
-    if not data_dict:
-        return person
-
     for field, value in data_dict.items():
         setattr(person, field, value)
 
