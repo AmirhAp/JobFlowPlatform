@@ -8,16 +8,16 @@ def get_by_id(db: Session, post_id: int) -> Post | None:
     return db.query(Post).filter(Post.id == post_id).first()
 
 
-def get_all(db: Session, filter: PostFilter) -> list[Post]:
+def get_all(db: Session, filters: PostFilter) -> list[Post]:
     query = db.query(Post)
 
-    if filter.company_id is not None:
-        query = query.filter(Post.company_id == filter.company_id)
+    if filters.company_id is not None:
+        query = query.filter(Post.company_id == filters.company_id)
     
-    if filter.status is not None:
-        query = query.filter(Post.status == filter.status)
+    if filters.status is not None:
+        query = query.filter(Post.status == filters.status)
     
-    return query.offset(filter.skip).limit(filter.limit).all()
+    return query.offset(filters.skip).limit(filters.limit).all()
 
 
 def create(db: Session, data: PostCreate) -> Post:
@@ -37,9 +37,6 @@ def update_status(db: Session, post: Post, data: PostStatusUpdate) -> Post:
 
 def update(db: Session, post: Post, data: PostUpdate) -> Post:
     data_dict = data.model_dump(exclude_unset=True)
-
-    if not data_dict:
-        return post
 
     for field, value in data_dict.items():
         setattr(post, field, value)

@@ -9,7 +9,7 @@ from app.repositories import company_repository
 
 
 NOT_FOUND_404 = "company not found"
-ALREAT_EXISTS_400 = "company already exitst"
+ALREAT_EXISTS_400 = "company already exists"
 
 
 def get_all(db: Session) -> List[Company]:
@@ -29,14 +29,21 @@ def create(db: Session, data: CompanyCreate) -> Company:
         )
     
 
-def update(db: Session, company_id: int, updated_company: CompanyUpdate) -> Company:
+def update(db: Session, company_id: int, data: CompanyUpdate) -> Company:
     company = _get_company_or_404(db, company_id)
 
-    if updated_company.name is not None:
-        _ensure_name_is_available(db, updated_company.name, company.id)
+    data_dict = data.model_dump(exclude_unset=True) 
+    if not data_dict:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="no fields available"
+        )
+    
+    if data.name is not None:
+        _ensure_name_is_available(db, data.name, company.id)
 
     try: 
-        return company_repository.update(db, company, updated_company)
+        return company_repository.update(db, company, data)
     except IntegrityError:
         db.rollback()
         raise HTTPException(
@@ -61,13 +68,13 @@ def _get_company_or_404 (db: Session, company_id: int) -> Company:
     return company
 
 
-def _ensure_name_is_available (db: Session, name: str, exlude_company_id: int | None = None) -> None:
+def _ensure_name_is_available (db: Session, name: str, exclude_company_id: int | None = None) -> None:
     existing_company = company_repository.get_by_name(db, name)
     
     if existing_company is None:
         return 
     
-    if existing_company is not None and existing_company.id == exlude_company_id:
+    if existing_company is not None and existing_company.id == exclude_company_id:
         return 
     
     raise HTTPException(

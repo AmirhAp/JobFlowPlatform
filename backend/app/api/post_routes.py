@@ -18,7 +18,7 @@ def get_post_by_id(post_id: int, db: Session=Depends(get_db)):
     return post_service.get_by_id(db, post_id)
 
 
-@router.post("/", response_model=PostRead)
+@router.post("/", response_model=PostRead, status_code=201)
 def create_post(post: PostCreate, db: Session=Depends(get_db)):
     return post_service.create(db, post)
 
@@ -28,7 +28,7 @@ def update_post_status(post_id: int, data: PostStatusUpdate, db: Session=Depends
     return post_service.update_status(db, post_id, data)    
 
 
-@router.put("/{post_id}", response_model=PostRead)
+@router.patch("/{post_id}", response_model=PostRead)
 def update_post_info(post_id: int, data: PostUpdate, db: Session=Depends(get_db)):
     return post_service.update(db, post_id, data)
 

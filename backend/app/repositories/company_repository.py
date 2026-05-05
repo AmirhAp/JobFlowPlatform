@@ -27,9 +27,6 @@ def create(db: Session, data: CompanyCreate) -> Company:
 def update(db: Session, company: Company, data: CompanyUpdate) -> Company:
     data_dict = data.model_dump(exclude_unset=True)
 
-    if not data_dict:
-        return company
-
     for field, value in data_dict.items():
         setattr(company, field, value)
 

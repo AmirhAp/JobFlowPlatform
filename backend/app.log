@@ -1,2 +1,76 @@
  2026-04-26 11:00:00,798 | INFO | app.api.company_routes | all company requested 
  2026-04-26 11:00:44,167 | INFO | app.api.company_routes | all company requested 
+2026-04-29 15:56:17,247 | INFO | app.main | <function uuid4 at 0x106f0c720> is started!! 
+2026-04-29 15:56:17,248 | INFO | app.main | <function uuid4 at 0x106f0c720> is done 
+2026-04-29 15:56:17,680 | INFO | app.main | <function uuid4 at 0x106f0c720> is started!! 
+2026-04-29 15:56:17,708 | INFO | app.main | <function uuid4 at 0x106f0c720> is done 
+2026-04-29 15:56:23,967 | INFO | app.main | <function uuid4 at 0x106f0c720> is started!! 
+2026-04-29 15:56:23,969 | INFO | app.api.company_routes | all company requested 
+2026-04-29 15:56:23,978 | INFO | app.main | <function uuid4 at 0x106f0c720> is done 
+2026-04-29 15:56:55,409 | INFO | app.main | <function uuid4 at 0x106f0c720> is started!! 
+2026-04-29 15:56:55,425 | INFO | app.main | <function uuid4 at 0x106f0c720> is done 
+2026-04-29 16:00:11,567 | INFO | app.main | <function uuid4 at 0x1071ec720> is started!! 
+2026-04-29 16:00:11,569 | INFO | app.api.company_routes | all company requested 
+2026-04-29 16:00:11,576 | INFO | app.main | <function uuid4 at 0x1071ec720> is done 
+2026-04-29 16:00:58,810 | INFO | app.main | <function uuid4 at 0x106fd8720> is started!! 
+2026-04-29 16:00:58,813 | INFO | app.api.company_routes | all company requested 
+2026-04-29 16:00:58,820 | INFO | app.main | <function uuid4 at 0x106fd8720> is done 
+2026-04-29 16:01:27,225 | INFO | app.main | <function uuid4 at 0x10b1bc7c0> is started!! 
+2026-04-29 16:01:27,227 | INFO | app.api.company_routes | all company requested 
+2026-04-29 16:01:27,235 | INFO | app.main | <function uuid4 at 0x10b1bc7c0> is done 
+2026-04-29 16:01:53,280 | INFO | app.main | <function uuid4 at 0x10b38c7c0> is started!! 
+2026-04-29 16:01:53,280 | INFO | app.main | <function uuid4 at 0x10b38c7c0> is done 
+2026-04-29 16:01:53,410 | INFO | app.main | <function uuid4 at 0x10b38c7c0> is started!! 
+2026-04-29 16:01:53,432 | INFO | app.main | <function uuid4 at 0x10b38c7c0> is done 
+2026-04-29 16:02:00,089 | INFO | app.main | <function uuid4 at 0x10b38c7c0> is started!! 
+2026-04-29 16:02:00,091 | INFO | app.api.company_routes | all company requested 
+2026-04-29 16:02:00,098 | INFO | app.main | <function uuid4 at 0x10b38c7c0> is done 
+2026-05-05 08:33:33,599 | INFO | app.main | <function uuid4 at 0x10718c720> is started!! 
+2026-05-05 08:33:33,600 | INFO | app.main | <function uuid4 at 0x10718c720> is done 
+2026-05-05 08:33:33,786 | INFO | app.main | <function uuid4 at 0x10718c720> is started!! 
+2026-05-05 08:33:33,805 | INFO | app.main | <function uuid4 at 0x10718c720> is done 
+2026-05-05 08:33:38,291 | INFO | app.main | <function uuid4 at 0x10718c720> is started!! 
+2026-05-05 08:34:21,271 | INFO | app.main | <function uuid4 at 0x106de4720> is started!! 
+2026-05-05 08:34:21,276 | INFO | app.main | <function uuid4 at 0x106de4720> is done 
+2026-05-05 08:34:26,927 | INFO | app.main | <function uuid4 at 0x106de4720> is started!! 
+2026-05-05 08:34:26,944 | INFO | app.main | <function uuid4 at 0x106de4720> is done 
+2026-05-05 08:34:35,417 | INFO | app.main | <function uuid4 at 0x106de4720> is started!! 
+2026-05-05 08:34:35,425 | INFO | app.main | <function uuid4 at 0x106de4720> is done 
+2026-05-05 08:34:44,769 | INFO | app.main | <function uuid4 at 0x106de4720> is started!! 
+2026-05-05 08:34:44,773 | INFO | app.main | <function uuid4 at 0x106de4720> is done 
+2026-05-05 08:34:56,108 | INFO | app.main | <function uuid4 at 0x106de4720> is started!! 
+2026-05-05 08:34:56,114 | INFO | app.main | <function uuid4 at 0x106de4720> is done 
+2026-05-05 08:35:53,361 | INFO | app.main | <function uuid4 at 0x108c38720> is started!! 
+2026-05-05 08:35:53,368 | INFO | app.main | <function uuid4 at 0x108c38720> is done 
+2026-05-05 08:35:57,596 | INFO | app.main | <function uuid4 at 0x108c38720> is started!! 
+2026-05-05 08:35:57,606 | INFO | app.main | <function uuid4 at 0x108c38720> is done 
+2026-05-05 08:36:05,812 | INFO | app.main | <function uuid4 at 0x108c38720> is started!! 
+2026-05-05 08:36:05,820 | INFO | app.main | <function uuid4 at 0x108c38720> is done 
+2026-05-05 08:36:12,192 | INFO | app.main | <function uuid4 at 0x108c38720> is started!! 
+2026-05-05 08:36:12,200 | INFO | app.main | <function uuid4 at 0x108c38720> is done 
+2026-05-05 08:36:27,446 | INFO | app.main | <function uuid4 at 0x108c38720> is started!! 
+2026-05-05 08:36:27,455 | INFO | app.main | <function uuid4 at 0x108c38720> is done 
+2026-05-05 08:36:42,956 | INFO | app.main | <function uuid4 at 0x108c38720> is started!! 
+2026-05-05 08:36:42,959 | INFO | app.main | <function uuid4 at 0x108c38720> is done 
+2026-05-05 10:05:48,527 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:05:48,528 | INFO | app.main | <function uuid4 at 0x106878720> is done 
+2026-05-05 10:05:48,684 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:05:48,705 | INFO | app.main | <function uuid4 at 0x106878720> is done 
+2026-05-05 10:05:54,977 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:05:54,986 | INFO | app.main | <function uuid4 at 0x106878720> is done 
+2026-05-05 10:06:00,949 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:06:00,962 | INFO | app.main | <function uuid4 at 0x106878720> is done 
+2026-05-05 10:06:03,998 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:06:04,003 | INFO | app.main | <function uuid4 at 0x106878720> is done 
+2026-05-05 10:06:13,632 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:06:13,638 | INFO | app.main | <function uuid4 at 0x106878720> is done 
+2026-05-05 10:06:20,517 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:06:20,527 | INFO | app.main | <function uuid4 at 0x106878720> is done 
+2026-05-05 10:06:28,685 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:06:28,691 | INFO | app.main | <function uuid4 at 0x106878720> is done 
+2026-05-05 10:06:36,740 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:06:36,745 | INFO | app.main | <function uuid4 at 0x106878720> is done 
+2026-05-05 10:06:43,521 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:06:43,528 | INFO | app.main | <function uuid4 at 0x106878720> is done 
+2026-05-05 10:06:50,646 | INFO | app.main | <function uuid4 at 0x106878720> is started!! 
+2026-05-05 10:06:50,649 | INFO | app.main | <function uuid4 at 0x106878720> is done 
